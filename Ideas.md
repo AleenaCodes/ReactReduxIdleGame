@@ -9,3 +9,36 @@ App
 Mechanism - sum up buildings p/s to get total p/s and add this on every second
 Clicking increments total number
 Clicking building increments num of building and building p/s
+
+
+
+
+
+Considerations
+
+- Saving to local storage
+- Mechanism to check if enough money
+- Have things greyed out if can't afford?
+- Express/node DB for leaderboard
+  - When user clicks leaderboard add in own score, re-order database, and draw in top 10
+  - When saving to local storage, also send to leaderboard?
+- Some stats - minutes playing
+- Set your own username
+- Users have unique userid, but can set own username
+  - Username displays on screen and on leaderboard
+
+
+  Memes -
+
+  Rickroll
+  Nyan cat
+  Angry cat
+  Pepe
+  Dog
+  Double rainbow
+  Dancing banana
+  Me gusta
+  Philosoraptor
+  Dramatic chipmunk
+  Charlie the unicorn
+  LLamas with hat
