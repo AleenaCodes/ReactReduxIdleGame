@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import BuildingList from '../containers/building-list';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {updateTotal} from '../actions';
 
 class MainPanel extends Component {
 
@@ -17,7 +16,12 @@ class MainPanel extends Component {
         )
       case "S":
         return (
-          <div><p>Stats</p></div>
+          <div>
+            <h2>Stats</h2>
+            <p>Total in bank: {this.props.stats.totalInBank}</p>
+            <p>Total all time: {this.props.stats.totalAllTime}</p>
+            <p>Total buildings: {this.props.stats.buildingsOwned}</p>
+          </div>
         )
       case "L":
         return (
@@ -29,12 +33,13 @@ class MainPanel extends Component {
 
 function mapStateToProps(state) {
   return {
-    display: state.mainPanel
+    display: state.mainPanel,
+    stats: state.stats
   }
 }
 
 function matchDispathToProps(dispatch) {
-  return bindActionCreators({updateTotal: updateTotal}, dispatch);
+  return bindActionCreators({}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispathToProps)(MainPanel);
