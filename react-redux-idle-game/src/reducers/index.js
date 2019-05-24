@@ -12,7 +12,8 @@ const initialState = {
     }
   ],
   counter: 0,
-  perSecond: 1
+  perSecond: 1,
+  mainPanel: "B" //B, S, L
 }
 
 
@@ -34,6 +35,29 @@ export default function allReducers(state = initialState, action) {
       return Object.assign({}, state, {
         counter: ((state.counter)+(state.perSecond))
       })
+    case 'SHOW_LEADERBOARD':
+      if (state.mainPanel === "L"){
+        return Object.assign({}, state, {
+          mainPanel: "B"
+        })
+      }
+      else {
+        return Object.assign({}, state, {
+          mainPanel: "L"
+        })
+      }
+    case 'SHOW_STATS':
+      if (state.mainPanel === "S"){
+        return Object.assign({}, state, {
+          mainPanel: "B"
+        })
+      }
+      else {
+        return Object.assign({}, state, {
+          mainPanel: "S"
+        })
+      }
+
     default:
       return state
   }

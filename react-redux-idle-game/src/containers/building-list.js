@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {buyBuilding} from '../actions';
-import Building from '../components/building';
+import Building from '../components/Building';
 
 class BuildingList extends Component {
 

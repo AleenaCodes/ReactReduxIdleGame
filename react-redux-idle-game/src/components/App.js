@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Counter from '../containers/counter';
-import BuildingList from '../containers/building-list';
+import Buttons from '../containers/buttons';
+import MainPanel from '../components/MainPanel';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {updateTotal} from '../actions';
@@ -16,9 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>Buildings</h2>
         <Counter />
-        <BuildingList />
+        <Buttons />
+        <MainPanel />
       </div>
     );
   }
@@ -26,7 +27,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    buildings: state.buildings //Change
+    buildings: state.buildings //Change - don't really need anything?
   }
 }
 
