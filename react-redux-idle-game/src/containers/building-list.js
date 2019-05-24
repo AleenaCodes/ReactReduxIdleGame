@@ -15,6 +15,7 @@ class BuildingList extends Component {
             id={index}
             name={building.name}
             number={building.number}
+            power={building.power}
           />
         </div>
       );

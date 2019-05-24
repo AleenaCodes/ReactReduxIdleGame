@@ -28,11 +28,11 @@ export default function allReducers(state = initialState, action) {
           }
           return building
         }),
-        perSecond: ((state.perSecond) + 1)
+        perSecond: ((state.perSecond) + (state.buildings[action.index].power))
       })
     case 'UPDATE_TOTAL':
       return Object.assign({}, state, {
-        counter: ((state.counter)+1)
+        counter: ((state.counter)+(state.perSecond))
       })
     default:
       return state
