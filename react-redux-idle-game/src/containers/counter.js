@@ -11,6 +11,7 @@ class Counter extends Component {
       <div>
         <h2>Counter</h2>
         <p>{this.props.counter}</p>
+        <p>Per second : {this.props.perSecond}</p>
       </div>
     )
   }
