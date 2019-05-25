@@ -6,9 +6,14 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import allReducers from './reducers';
 import './index.css';
+import {loadState, saveState} from './localStorage';
 
-const store = createStore(allReducers);
+const persistedState = loadState();
+const store = createStore(allReducers, persistedState);
 
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 ReactDOM.render(
   <Provider store={store}>

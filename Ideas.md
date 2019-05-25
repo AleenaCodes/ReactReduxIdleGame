@@ -34,16 +34,28 @@ Considerations
 
 Memes -
 
-Rickroll
-Nyan cat
-Angry cat
-Pepe
 Doge
+Pepe
 Double rainbow
-Dancing banana
 Me gusta
-Philosoraptor
+Grumpy cat
 Dramatic chipmunk
+Nyan cat
+Philosoraptor
+
+
+Dat boi
+Long boy
+Big chungus
+Drake
+Surprised pikachu
+Fidget spinner
+Arthur fist
+
+
+
+Rickroll
+Dancing banana
 Charlie the unicorn
 LLamas with hat
 

@@ -2,15 +2,11 @@ const initialState = {
   buildings: [
     {
       name: "Tower",
-      number: 0,
-      cost: 20,
-      power: 1
+      number: 0, cost: 20, power: 1
     },
     {
       name: "Factory",
-      number: 0,
-      cost: 50,
-      power: 5
+      number: 0, cost: 50, power: 5
     }
   ],
   counter: 0,
