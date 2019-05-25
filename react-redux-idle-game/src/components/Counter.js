@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {buyBuilding} from '../actions';
+import './Counter.css';
 
 class Counter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="counter">
         <h2>Counter</h2>
         <p>{this.props.counter}</p>
         <p>Per second : {this.props.perSecond}</p>

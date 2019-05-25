@@ -3,12 +3,13 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {showLeaderboard} from '../actions';
 import {showStats} from '../actions';
+import './Buttons.css';
 
 class Buttons extends Component {
 
   render() {
     return (
-      <div>
+      <div className="buttonGroup">
         <button onClick={() => this.props.showStats()}>Stats</button>
         <button onClick={() => this.props.showLeaderboard()}>Leaderboard</button>
       </div>

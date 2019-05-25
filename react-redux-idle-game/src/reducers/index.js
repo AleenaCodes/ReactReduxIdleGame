@@ -1,12 +1,24 @@
 const initialState = {
   buildings: [
     {
-      name: "Tower",
+      name: "Doge",
       number: 0, cost: 20, power: 1
     },
     {
-      name: "Factory",
+      name: "Grumpy Cat",
       number: 0, cost: 50, power: 5
+    },
+    {
+      name: "Dat Boi",
+      number: 0, cost: 100, power: 10
+    },
+    {
+      name: "Philosoraptor",
+      number: 0, cost: 250, power: 15
+    },
+    {
+      name: "Big Chungus",
+      number: 0, cost: 1000, power: 20
     }
   ],
   counter: 0,

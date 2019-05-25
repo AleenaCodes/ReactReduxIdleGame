@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BuildingList from '../components/BuildingList';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import './MainPanel.css';
 
 class MainPanel extends Component {
 
@@ -10,13 +11,13 @@ class MainPanel extends Component {
     switch (display) {
       case "B":
         return (
-          <div>
+          <div className="mainPanel">
             <BuildingList />
           </div>
         )
       case "S":
         return (
-          <div>
+          <div className="mainPanel">
             <h2>Stats</h2>
             <p>Total in bank: {this.props.stats.totalInBank}</p>
             <p>Total all time: {this.props.stats.totalAllTime}</p>
@@ -25,7 +26,7 @@ class MainPanel extends Component {
         )
       case "L":
         return (
-          <div><p>Leaderboard</p></div>
+          <div className="mainPanel"><p>Leaderboard</p></div>
         )
     }
   }
