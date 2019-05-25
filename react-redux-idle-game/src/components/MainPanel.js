@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import BuildingList from '../containers/building-list';
+import BuildingList from '../components/BuildingList';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Counter from '../containers/counter';
-import Buttons from '../containers/buttons';
+import Counter from '../components/Counter';
+import Buttons from '../components/Buttons';
 import MainPanel from '../components/MainPanel';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -26,9 +26,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    buildings: state.buildings //Change - don't really need anything?
-  }
+  return {} //Don't need any specific properties
 }
 
 function matchDispathToProps(dispatch) {
