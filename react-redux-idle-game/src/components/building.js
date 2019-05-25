@@ -3,10 +3,10 @@ import React from 'react';
 function Building(props) {
   return (
     <div className="building">
-      <h2>{props.name}</h2>
-      <p>Owned: {props.number}</p>
-      <p>Cost: {props.cost}</p>
-      <p>Power: {props.power}</p>
+      <h4>{props.name}</h4>
+      <span>Owned: {props.number}</span>
+      <span>Cost: {props.cost}</span>
+      <span>Power: {props.power}</span>
     </div>
   );
 }

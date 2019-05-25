@@ -13,3 +13,7 @@ export function showLeaderboard() {
 export function showStats() {
   return { type: 'SHOW_STATS'}
 }
+
+export function resetCounter() {
+  return { type: 'RESET_COUNTER'}
+}

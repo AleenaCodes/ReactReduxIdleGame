@@ -3,13 +3,14 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {buyBuilding} from '../actions';
 import Building from '../components/Building';
+import './BuildingList.css';
 
 class BuildingList extends Component {
 
   createListItems() {
     return (this.props.buildings).map((building,index) => {
       return (
-        <div onClick={() => this.props.buyBuilding(index)}>
+        <div className="buildingCard" onClick={() => this.props.buyBuilding(index)}>
           <Building
             key={index}
             id={index}
@@ -25,7 +26,7 @@ class BuildingList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="buildingsGroup">
         {this.createListItems()}
       </div>
     )

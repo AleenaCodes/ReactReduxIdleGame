@@ -17,8 +17,24 @@ const initialState = {
       number: 0, cost: 250, power: 15
     },
     {
+      name: "Nyan Cat",
+      number: 0, cost: 500, power: 20
+    },
+    {
+      name: "Double Rainbow",
+      number: 0, cost: 1000, power: 25
+    },
+    {
+      name: "Fidget Spinner",
+      number: 0, cost: 1500, power: 30
+    },
+    {
+      name: "Surprised Pikachu",
+      number: 0, cost: 2000, power: 35
+    },
+    {
       name: "Big Chungus",
-      number: 0, cost: 1000, power: 20
+      number: 0, cost: 5000, power: 50
     }
   ],
   counter: 0,
@@ -59,7 +75,6 @@ export default function allReducers(state = initialState, action) {
         })
       }
       else return state
-
     case 'UPDATE_TOTAL':
       console.log(state);
       return Object.assign({}, state, {
@@ -92,6 +107,8 @@ export default function allReducers(state = initialState, action) {
           mainPanel: "S"
         })
       }
+    case 'RESET_COUNTER':
+      return initialState;
 
     default:
       return state

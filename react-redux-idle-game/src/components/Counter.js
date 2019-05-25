@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {buyBuilding} from '../actions';
 import './Counter.css';
 
 class Counter extends Component {
@@ -9,7 +8,6 @@ class Counter extends Component {
   render() {
     return (
       <div className="counter">
-        <h2>Counter</h2>
         <p>{this.props.counter}</p>
         <p>Per second : {this.props.perSecond}</p>
       </div>
@@ -26,7 +24,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispathToProps(dispatch) {
-  return bindActionCreators({buyBuilding: buyBuilding}, dispatch);
+  return bindActionCreators({}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispathToProps)(Counter);
