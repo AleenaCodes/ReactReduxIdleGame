@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import './Counter.css';
+import './css/Counter.css';
 
 class Counter extends Component {
 

@@ -3,10 +3,9 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0px, 1fr));
   grid-template-rows: repeat(3, minmax(0px, 1fr));
-  justify-items: stretch;
   text-align: center;
 }
 
 .buildingCard {
-  overflow: hidden;
+  height: 100px;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 import Counter from '../components/Counter';
 import Buttons from '../components/Buttons';
 import MainPanel from '../components/MainPanel';

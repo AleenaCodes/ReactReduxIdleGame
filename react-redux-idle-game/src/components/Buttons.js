@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {showLeaderboard} from '../actions';
 import {showStats} from '../actions';
-import './Buttons.css';
+import './css/Buttons.css';
 
 class Buttons extends Component {
 

@@ -3,7 +3,7 @@ import BuildingList from '../components/BuildingList';
 import {resetCounter} from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import './MainPanel.css';
+import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
