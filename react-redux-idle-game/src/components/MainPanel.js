@@ -7,10 +7,21 @@ import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
+  userCallResults = "";
+
   getMinutes(seconds) {
-    console.log(seconds);
     return Math.floor(seconds/60);
   }
+
+  async fetchUsers(){
+    var userCall = await fetch('/users')
+      .then(res => res.json())
+      .then(users => {
+        return (users[1].username);
+      });
+      this.userCallResults = userCall;
+  }
+
 
   render() {
     const display = this.props.display;
@@ -33,9 +44,13 @@ class MainPanel extends Component {
           </div>
         )
       case "L":
-        return (
-          <div className="mainPanel"><p>Leaderboard</p></div>
-        )
+          this.fetchUsers();
+          return (
+            <div className="mainPanel">
+              <p>Leaderboard</p>
+              {this.userCallResults}
+            </div>
+          )
     }
   }
 }

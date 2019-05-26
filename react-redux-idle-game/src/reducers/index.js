@@ -45,7 +45,8 @@ const initialState = {
     totalAllTime: 0,
     buildingsOwned: 0,
     secondsPlayed: 0
-  }
+  },
+  tester: "this is tester text"
 }
 
 
