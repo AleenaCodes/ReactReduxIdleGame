@@ -14,7 +14,7 @@ class MainPanel extends Component {
   }
 
   async fetchUsers(){
-    var userCall = await fetch('/users')
+    var userCall = await fetch('/leaderboard')
       .then(res => res.json())
       .then(users => {
         return (users[1].username);
