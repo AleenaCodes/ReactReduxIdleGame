@@ -43,7 +43,8 @@ const initialState = {
   stats: {
     totalInBank: 0,
     totalAllTime: 0,
-    buildingsOwned: 0
+    buildingsOwned: 0,
+    secondsPlayed: 0
   }
 }
 
@@ -70,19 +71,20 @@ export default function allReducers(state = initialState, action) {
           stats: {
             totalInBank: state.stats.totalInBank,
             totalAllTime: state.stats.totalAllTime,
-            buildingsOwned: ((state.stats.buildingsOwned)+1)
+            buildingsOwned: ((state.stats.buildingsOwned)+1),
+            secondsPlayed: ((state.stats.secondsPlayed))
           }
         })
       }
       else return state
     case 'UPDATE_TOTAL':
-      console.log(state);
       return Object.assign({}, state, {
         counter: ((state.counter)+(state.perSecond)),
         stats: {
           totalInBank: ((state.counter)+(state.perSecond)),
           totalAllTime: ((state.stats.totalAllTime)+(state.perSecond)),
-          buildingsOwned: (state.stats.buildingsOwned)
+          buildingsOwned: (state.stats.buildingsOwned),
+          secondsPlayed: ((state.stats.secondsPlayed)+1)
         }
       })
     case 'SHOW_LEADERBOARD':

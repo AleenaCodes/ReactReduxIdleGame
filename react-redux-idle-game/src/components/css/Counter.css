@@ -1,4 +1,17 @@
 .counter {
   grid-column: 1 / 2;
-  grid-row: 1 / 2
+  grid-row: 1 / 2;
+  display: grid;
+  justify-items: center;
+  align-content: space-evenly;
+}
+
+#bank {
+  margin: 0px 0px;
+  font-size: 2em;
+}
+
+#perSecond {
+  margin: 0px 0px;
+  font-size: 1em;
 }

@@ -8,8 +8,8 @@ class Counter extends Component {
   render() {
     return (
       <div className="counter">
-        <p>{this.props.counter}</p>
-        <p>Per second : {this.props.perSecond}</p>
+        <p id="bank">{this.props.counter}</p>
+        <p id="perSecond">Making {this.props.perSecond} internet points per second</p>
       </div>
     )
   }

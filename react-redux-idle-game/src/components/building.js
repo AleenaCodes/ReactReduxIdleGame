@@ -3,10 +3,13 @@ import React from 'react';
 function Building(props) {
   return (
     <div className="building">
-      <h4>{props.name}</h4>
-      <span>Owned: {props.number} </span>
-      <span>Cost: {props.cost} </span>
-      <span>Power: {props.power} </span>
+      <img src={require('./pictures/nyancat.png')} alt="meme icon" id="buildingIcon"/>
+      <span id="buildingOwned">{props.number}</span>
+      <div>
+        <h4 id="buildingName">{props.name}</h4>
+        <p id="buildingCost">Cost: {props.cost}</p>
+        <p id="buildingPower">Power: {props.power}</p>
+      </div>
     </div>
   );
 }

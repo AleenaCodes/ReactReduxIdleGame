@@ -10,8 +10,8 @@ class Buttons extends Component {
   render() {
     return (
       <div className="buttonGroup">
-        <button onClick={() => this.props.showStats()}>Stats</button>
-        <button onClick={() => this.props.showLeaderboard()}>Leaderboard</button>
+        <button className="nes-btn is-primary" onClick={() => this.props.showStats()}>Stats</button>
+        <button className="nes-btn is-primary" onClick={() => this.props.showLeaderboard()}>Leaderboard</button>
       </div>
     )
   }

@@ -10,7 +10,7 @@ class BuildingList extends Component {
   createListItems() {
     return (this.props.buildings).map((building,index) => {
       return (
-        <div className="buildingCard" onClick={() => this.props.buyBuilding(index)}>
+        <div className="buildingCard" className="nes-container is-rounded" onClick={() => this.props.buyBuilding(index)}>
           <Building
             key={index}
             id={index}

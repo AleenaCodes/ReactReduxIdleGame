@@ -1,4 +1,15 @@
 .buttonGroup {
   grid-column: 2 / 3;
-  grid-row: 1 / 2
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+button {
+  height: 3em;
+  width: 50%;
+  font-size: 1em;
 }

@@ -7,6 +7,11 @@ import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
+  getMinutes(seconds) {
+    console.log(seconds);
+    return Math.floor(seconds/60);
+  }
+
   render() {
     const display = this.props.display;
     switch (display) {
@@ -23,7 +28,8 @@ class MainPanel extends Component {
             <p>Total in bank: {this.props.stats.totalInBank}</p>
             <p>Total all time: {this.props.stats.totalAllTime}</p>
             <p>Total buildings: {this.props.stats.buildingsOwned}</p>
-            <button onClick={() => this.props.resetCounter()}>Reset</button>
+            <p>Minutes played: {this.getMinutes(this.props.stats.secondsPlayed)}</p>
+            <button id="resetButton" className="nes-btn is-error" onClick={() => this.props.resetCounter()}>Reset</button>
           </div>
         )
       case "L":
