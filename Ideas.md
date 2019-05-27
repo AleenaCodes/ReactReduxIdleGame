@@ -48,6 +48,7 @@ Left to do -
 - Get add to leaderboard action actually adding to db - DONE
 - Get leaderboard displaying as table - DONE
 - Make and add all icons
+- Make SVG Logo
 - Finish styling - leaderboard page+form, make everything a bit smaller
 
 If time -

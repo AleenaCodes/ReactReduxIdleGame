@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Tech Report - ab15748</title>
+    <style>
+      body {font-family: Arial;}
+    </style>
+  </head>
+  <body>
+    <h1>Web Tech Report</h1>
+    <h2>Mark Estimates (unfold for more details)</h2>
+    <details>
+      <summary>
+        X for HTML
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for CSS
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for JS
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for PNG
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for SVG
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for Server
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for Database
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for Dynamic Pages
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <details>
+      <summary>
+        X for Depth (out of 40)
+      </summary>
+      This is some super long text wonder if this will work
+    </details>
+    <h2>Depth</h2>
+    <p>
+      The web application has a React frontend, Redux used for state management, an Express server, and a MongoDB database (cloud hosted with MongoDB Atlas) with Mongoose (an Object Data Modelling library) used for the schema. I chose these because web development is a fast-moving field and I wanted to have experience with using modern technologies.
+    </p>
+      The basic idea is that of an "incremental game" - a genre that involves simply buying objects of varying costs and power in the hope to generate as many overall items as possible. Some popular examples include Cookie Clicker and Universal Paperclip.
+    <p>
+    </p>
+    <p>
+      Redux leant itself well to my needs, as the game requires many different values to be passed between each other constantly (e.g. buying an item affects the game speed), and so it made sense to have all objects having acces to an overarching shared state. Just as Redux is a common pairing with React, I also found that MongoDB was a natural choice with use with the Express server, as they are commonly found together in stacks (the MEAN and MERN stacks being a common choice for both small and large projects).
+    </p>
+    <p>
+      The only pre-written code is that generated from the CLI setups for React (create-react-app) and Express (express-generator). These generated initial file structures for the frontend and backend which I then wrote my own code into - the creation of components, the Redux setup, the frontend logic, the routers for Express and the setup and calls to the database.
+    </p>
+    <p>
+      The React/Redux combination handle most of the game logic, with an overarching game loop that updates every second, and Redux facilitating the passing of values between components. The server and database were used to access and add to a universal leaderboard, which anyone with access to the game could add their own scores into. The game state is also saved using the LocalStorage API so that if the user loads the game up a second time their gameplay continues where they left off.
+    </p>
+    <h3>Some shortcomings</h3>
+    <ul>
+      <li>
+        There is little done in terms of security, other than the inbuilt verifications, such as the input validation provided in the Mongoose model. If I was to host this online, the security issues around accessing the database could be solved by exploiting the use of environment variables in my setup.
+      </li>
+      <li>
+        By the nature of my project, I did not do anything too sophisticated with the database, but if I was to extend this project, I would explore having user accounts with authentication for saving game states between different machines.
+      </li>
+    </ul>
+  </body>
+</html>

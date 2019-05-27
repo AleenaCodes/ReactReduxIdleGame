@@ -15,7 +15,7 @@ class MainPanel extends Component {
   }
 
   async fetchEntries(){
-    var leaderboardCall = await fetch('/users')
+    var leaderboardCall = await fetch('/leaderboard')
       .then(res => res.json())
       .then(entries => {
         return (entries);
@@ -31,25 +31,6 @@ class MainPanel extends Component {
       if(a.score > b.score) { return -1; }
       if(a.score < b.score) { return 1; }
     });
-
-    // Instead make a table structure (and then change above back to leaderboard URL)
-
-    // var tableFormat = <table><tr><th>Username</th><th>Score</th></tr><tr><td>user1</td><td>29582</td></tr><tr><td>user2</td><td>29235582</td></tr></table>;
-    //
-    //
-    // console.log(sortedArray);
-    //
-    // var newArray = sortedArray.map((entry, index) => {
-    //   return <tr><td>{entry.username}</td><td>{entry.score}</td></tr>;
-    // })
-    // console.log(newArray);
-    //
-    // console.log(newArray[0]);
-    //
-    // tableFormat += newArray[0];
-    //
-    // return tableFormat;
-
 
     return sortedArray.map((entry,index) => {
       return <tr><td>{entry.username}</td><td>{entry.score}</td></tr>;
@@ -82,7 +63,7 @@ class MainPanel extends Component {
         return (
           <div className="mainPanel">
             <p>Leaderboard</p>
-            <table className="nes-table">
+            <table className="nes-table is-bordered is-centered">
               <tr><th>Username</th><th>Score</th></tr>
               {this.leaderboardEntries}
             </table>
