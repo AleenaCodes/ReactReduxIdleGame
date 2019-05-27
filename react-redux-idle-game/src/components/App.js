@@ -9,36 +9,10 @@ import {updateTotal} from '../actions';
 
 class App extends React.Component {
 
-  // leaderboardIDgenerated = "nothing yet"; //take out
-
   componentDidMount() {
     this.props.updateTotal();
     this.interval = setInterval(() => this.props.updateTotal(), 1000);
-    // this.generateLeaderboardId(); // take out
   }
-
-  // async generateLeaderboardId() { //take out
-  //   console.log("getting leaderboard ID");
-  //
-  //   var data = {
-  //     "username" : "PlayerOne",
-  //     "score": 52529
-  //   }
-  //   var leaderboardAddCall = await fetch('/leaderboard', {
-  //     method: 'POST',
-  //     headers: {
-  //           'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(data)
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     console.log(res);
-  //     console.log(res.createdEntry);
-  //     this.props.addLeaderboardId(res.createdEntry.username);
-  //   });
-  //
-  // }
 
   render() {
     return (

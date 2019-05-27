@@ -8,14 +8,14 @@ import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
-  leaderboardEntries = []; //Will fill after sorting API call results
+  leaderboardEntries = "Loading"; //Gets filled after sorting API call results
 
   getMinutes(seconds) {
     return Math.floor(seconds/60);
   }
 
   async fetchEntries(){
-    var leaderboardCall = await fetch('/leaderboard')
+    var leaderboardCall = await fetch('/users')
       .then(res => res.json())
       .then(entries => {
         return (entries);
@@ -32,12 +32,27 @@ class MainPanel extends Component {
       if(a.score < b.score) { return 1; }
     });
 
+    // Instead make a table structure (and then change above back to leaderboard URL)
+
+    // var tableFormat = <table><tr><th>Username</th><th>Score</th></tr><tr><td>user1</td><td>29582</td></tr><tr><td>user2</td><td>29235582</td></tr></table>;
+    //
+    //
+    // console.log(sortedArray);
+    //
+    // var newArray = sortedArray.map((entry, index) => {
+    //   return <tr><td>{entry.username}</td><td>{entry.score}</td></tr>;
+    // })
+    // console.log(newArray);
+    //
+    // console.log(newArray[0]);
+    //
+    // tableFormat += newArray[0];
+    //
+    // return tableFormat;
+
+
     return sortedArray.map((entry,index) => {
-      return (
-        <li className="leaderboardEntry" key={index}>
-          {entry.username} {entry.score}
-        </li>
-      );
+      return <tr><td>{entry.username}</td><td>{entry.score}</td></tr>;
     });
   }
 
@@ -67,7 +82,10 @@ class MainPanel extends Component {
         return (
           <div className="mainPanel">
             <p>Leaderboard</p>
-            {this.leaderboardEntries}
+            <table className="nes-table">
+              <tr><th>Username</th><th>Score</th></tr>
+              {this.leaderboardEntries}
+            </table>
             <form action="">
               Username:
               <input type="text" name="username" placeholder="player" id="inputtedUsername"/>

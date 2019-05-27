@@ -136,14 +136,8 @@ export default function allReducers(state = initialState, action) {
     case 'ADD_TO_LEADERBOARD':
       console.log("adding to leaderboard");
 
-      // Add to DB
-
-      console.log(action.username);
-      console.log(state.counter);
-
       addEntryToDB(action.username, state.counter);
 
-      // Put username into state
       return Object.assign({}, state, {
         leaderboardUsername: action.username
       })

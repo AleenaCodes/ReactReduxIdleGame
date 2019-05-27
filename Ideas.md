@@ -46,7 +46,9 @@ Left to do -
 - Get add to leaderboard function passing a parameter - DONE
 - Get add to leaderboard action working with form - DONE
 - Get add to leaderboard action actually adding to db - DONE
+- Get leaderboard displaying as table - DONE
 - Make and add all icons
+- Finish styling - leaderboard page+form, make everything a bit smaller
 
 If time -
 
