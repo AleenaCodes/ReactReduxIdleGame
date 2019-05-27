@@ -6,12 +6,39 @@ import MainPanel from '../components/MainPanel';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {updateTotal} from '../actions';
+import {addLeaderboardId} from '../actions';
 
 class App extends React.Component {
+
+  leaderboardIDgenerated = "nothing yet";
 
   componentDidMount() {
     this.props.updateTotal();
     this.interval = setInterval(() => this.props.updateTotal(), 1000);
+    this.generateLeaderboardId();
+  }
+
+  async generateLeaderboardId() { //add to db, get back id, send to addLeaderboardId action
+    console.log("getting leaderboard ID");
+
+    var data = {
+      "username" : "PlayerOne",
+      "score": 52529
+    }
+    var leaderboardAddCall = await fetch('/leaderboard', {
+      method: 'POST',
+      headers: {
+            'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+      console.log(res.createdEntry);
+      this.props.addLeaderboardId(res.createdEntry.username);
+    });
+
   }
 
   render() {
@@ -26,11 +53,13 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {} //Don't need any specific properties
+  return {
+    leaderboardID: state.leaderboardID
+  }
 }
 
 function matchDispathToProps(dispatch) {
-  return bindActionCreators({updateTotal: updateTotal}, dispatch);
+  return bindActionCreators({updateTotal: updateTotal, addLeaderboardId: addLeaderboardId}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispathToProps)(App);

@@ -46,7 +46,7 @@ const initialState = {
     buildingsOwned: 0,
     secondsPlayed: 0
   },
-  tester: "this is tester text"
+  leaderboardId: null
 }
 
 
@@ -110,6 +110,11 @@ export default function allReducers(state = initialState, action) {
           mainPanel: "S"
         })
       }
+    case 'ADD_LEADERBOARD_ID':
+      var generatedId = action.id;
+      return Object.assign({}, state, {
+        leaderboardId: generatedId
+      })
     case 'RESET_COUNTER':
       return initialState;
 

@@ -7,21 +7,40 @@ import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
-  userCallResults = "";
+  leaderboardCallResults = ""; // take out later
+  leaderboardEntries = []; //Will fill after sorting API call results
 
   getMinutes(seconds) {
     return Math.floor(seconds/60);
   }
 
-  async fetchUsers(){
-    var userCall = await fetch('/leaderboard')
+  async fetchEntries(){
+    var leaderboardCall = await fetch('/leaderboard')
       .then(res => res.json())
-      .then(users => {
-        return (users[1].username);
+      .then(entries => {
+        return (entries);
       });
-      this.userCallResults = userCall;
+    this.leaderboardCallResults = leaderboardCall; //take out later
+    this.leaderboardEntries = this.makeLeaderboard(leaderboardCall);
   }
 
+  makeLeaderboard(entries){
+    var sortedArray = entries;
+
+    sortedArray.sort(function(a,b){
+      if(a.score === b.score) { return 0; }
+      if(a.score > b.score) { return -1; }
+      if(a.score < b.score) { return 1; }
+    });
+
+    return sortedArray.map((entry,index) => {
+      return (
+        <li className="leaderboardEntry" key={index}>
+          {entry.username} {entry.score}
+        </li>
+      );
+    });
+  }
 
   render() {
     const display = this.props.display;
@@ -41,14 +60,15 @@ class MainPanel extends Component {
             <p>Total buildings: {this.props.stats.buildingsOwned}</p>
             <p>Minutes played: {this.getMinutes(this.props.stats.secondsPlayed)}</p>
             <button id="resetButton" className="nes-btn is-error" onClick={() => this.props.resetCounter()}>Reset</button>
+            <p>{this.props.leaderboardId}</p>
           </div>
         )
       case "L":
-          this.fetchUsers();
+          this.fetchEntries();
           return (
             <div className="mainPanel">
               <p>Leaderboard</p>
-              {this.userCallResults}
+              {this.leaderboardEntries}
             </div>
           )
     }
@@ -58,7 +78,8 @@ class MainPanel extends Component {
 function mapStateToProps(state) {
   return {
     display: state.mainPanel,
-    stats: state.stats
+    stats: state.stats,
+    leaderboardID: state.leaderboardID
   }
 }
 

@@ -3,10 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var leaderboardRouter = require('./routes/leaderboard');
+
+mongoose.connect("mongodb+srv://ab15748:webtech2018@webtech2018-oaibt.mongodb.net/test?retryWrites=true");
 
 var app = express();
 

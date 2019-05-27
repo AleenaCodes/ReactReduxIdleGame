@@ -17,3 +17,7 @@ export function showStats() {
 export function resetCounter() {
   return { type: 'RESET_COUNTER'}
 }
+
+export function addLeaderboardId() {
+  return { type: 'ADD_LEADERBOARD_ID'}
+}
