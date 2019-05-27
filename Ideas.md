@@ -49,14 +49,20 @@ Left to do -
 - Get leaderboard displaying as table - DONE
 - Leaderboard - style submit button, make only first 10 of table - DONE
 - Make and add all icons - DONE
-- Make SVG background
-- Finish styling - make everything a bit smaller
+- Make SVG background - :(
 
 If time -
 
+- Finish styling - make everything a bit smaller
 - Get leaderboard action patching current score -
   - API call returns ID
   - Add this ID to the state
   - When running the action, do a check - if ID already set then patch, if not then add new entry
 - Things greyed out if can't afford
 - Import/export save
+
+Todo before submitting -
+
+- Take out rubbish from code
+- Package (and test without node modules folders)
+- Finish writing report
