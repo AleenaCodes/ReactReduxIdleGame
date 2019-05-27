@@ -18,6 +18,6 @@ export function resetCounter() {
   return { type: 'RESET_COUNTER'}
 }
 
-export function addLeaderboardId() {
-  return { type: 'ADD_LEADERBOARD_ID'}
+export function addToLeaderboard(username) {
+  return { type: 'ADD_TO_LEADERBOARD'}
 }

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import BuildingList from '../components/BuildingList';
 import {resetCounter} from '../actions';
+import {addToLeaderboard} from '../actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import './css/MainPanel.css';
 
 class MainPanel extends Component {
 
-  leaderboardCallResults = ""; // take out later
   leaderboardEntries = []; //Will fill after sorting API call results
 
   getMinutes(seconds) {
@@ -20,7 +20,6 @@ class MainPanel extends Component {
       .then(entries => {
         return (entries);
       });
-    this.leaderboardCallResults = leaderboardCall; //take out later
     this.leaderboardEntries = this.makeLeaderboard(leaderboardCall);
   }
 
@@ -60,17 +59,18 @@ class MainPanel extends Component {
             <p>Total buildings: {this.props.stats.buildingsOwned}</p>
             <p>Minutes played: {this.getMinutes(this.props.stats.secondsPlayed)}</p>
             <button id="resetButton" className="nes-btn is-error" onClick={() => this.props.resetCounter()}>Reset</button>
-            <p>{this.props.leaderboardId}</p>
+            <p>{this.props.leaderboardUsername}</p>
           </div>
         )
       case "L":
-          this.fetchEntries();
-          return (
-            <div className="mainPanel">
-              <p>Leaderboard</p>
-              {this.leaderboardEntries}
-            </div>
-          )
+        this.fetchEntries();
+        return (
+          <div className="mainPanel">
+            <p>Leaderboard</p>
+            {this.leaderboardEntries}
+            <button className="leaderboardAddButton" onClick={() => this.props.addToLeaderboard("player3")}>Add to leaderboard</button>
+          </div>
+        )
     }
   }
 }
@@ -79,12 +79,12 @@ function mapStateToProps(state) {
   return {
     display: state.mainPanel,
     stats: state.stats,
-    leaderboardID: state.leaderboardID
+    leaderboardUsername: state.leaderboardUsername
   }
 }
 
 function matchDispathToProps(dispatch) {
-  return bindActionCreators({resetCounter: resetCounter}, dispatch);
+  return bindActionCreators({resetCounter: resetCounter, addToLeaderboard: addToLeaderboard}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispathToProps)(MainPanel);

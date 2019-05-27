@@ -46,13 +46,14 @@ const initialState = {
     buildingsOwned: 0,
     secondsPlayed: 0
   },
-  leaderboardId: null
+  leaderboardUsername: "player"
 }
 
 
 export default function allReducers(state = initialState, action) {
   switch (action.type) {
     case 'BUY_BUILDING':
+      console.log(action);
 
       var amountInBank = state.counter;
       var costOfBuilding = state.buildings[action.index].cost;
@@ -110,10 +111,11 @@ export default function allReducers(state = initialState, action) {
           mainPanel: "S"
         })
       }
-    case 'ADD_LEADERBOARD_ID':
-      var generatedId = action.id;
+    case 'ADD_TO_LEADERBOARD':
+      console.log("adding to leaderboard");
+      console.log(action);
       return Object.assign({}, state, {
-        leaderboardId: generatedId
+        leaderboardUsername: action.username
       })
     case 'RESET_COUNTER':
       return initialState;
