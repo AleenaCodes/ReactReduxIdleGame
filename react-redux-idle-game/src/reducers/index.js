@@ -46,9 +46,31 @@ const initialState = {
     buildingsOwned: 0,
     secondsPlayed: 0
   },
-  leaderboardUsername: "player"
+  leaderboardUsername: "player",
+  leaderboardDatabaseID: ""
 }
 
+async function addEntryToDB(inputtedUsername, currentScore) {
+  console.log("making DB call");
+
+  var data = {
+    "username" : inputtedUsername,
+    "score": currentScore
+  }
+  var leaderboardAddCall = await fetch('/leaderboard', {
+    method: 'POST',
+    headers: {
+          'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(res => {
+    console.log(res);
+    console.log(res.createdEntry);
+  });
+
+}
 
 export default function allReducers(state = initialState, action) {
   switch (action.type) {
@@ -113,7 +135,15 @@ export default function allReducers(state = initialState, action) {
       }
     case 'ADD_TO_LEADERBOARD':
       console.log("adding to leaderboard");
-      console.log(action);
+
+      // Add to DB
+
+      console.log(action.username);
+      console.log(state.counter);
+
+      addEntryToDB(action.username, state.counter);
+
+      // Put username into state
       return Object.assign({}, state, {
         leaderboardUsername: action.username
       })

@@ -44,12 +44,15 @@ See https://redux.js.org/basics/reducers section "Splitting Reducers" for how to
 Left to do -
 
 - Get add to leaderboard function passing a parameter - DONE
-- Get add to leaderboard action working with form
-- Get add to leaderboard action actually adding to db
-- Check all leaderboard functionality
+- Get add to leaderboard action working with form - DONE
+- Get add to leaderboard action actually adding to db - DONE
 - Make and add all icons
 
 If time -
 
+- Get leaderboard action patching current score -
+  - API call returns ID
+  - Add this ID to the state
+  - When running the action, do a check - if ID already set then patch, if not then add new entry
 - Things greyed out if can't afford
 - Import/export save
