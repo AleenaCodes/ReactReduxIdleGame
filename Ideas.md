@@ -47,9 +47,10 @@ Left to do -
 - Get add to leaderboard action working with form - DONE
 - Get add to leaderboard action actually adding to db - DONE
 - Get leaderboard displaying as table - DONE
-- Make and add all icons
-- Make SVG Logo
-- Finish styling - leaderboard page+form, make everything a bit smaller
+- Leaderboard - style submit button, make only first 10 of table - DONE
+- Make and add all icons - DONE
+- Make SVG background
+- Finish styling - make everything a bit smaller
 
 If time -
 

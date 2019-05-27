@@ -32,7 +32,9 @@ class MainPanel extends Component {
       if(a.score < b.score) { return 1; }
     });
 
-    return sortedArray.map((entry,index) => {
+    var first10Entries = sortedArray.slice(0,10);
+
+    return first10Entries.map((entry,index) => {
       return <tr><td>{entry.username}</td><td>{entry.score}</td></tr>;
     });
   }
@@ -55,7 +57,6 @@ class MainPanel extends Component {
             <p>Total buildings: {this.props.stats.buildingsOwned}</p>
             <p>Minutes played: {this.getMinutes(this.props.stats.secondsPlayed)}</p>
             <button id="resetButton" className="nes-btn is-error" onClick={() => this.props.resetCounter()}>Reset</button>
-            <p>{this.props.leaderboardUsername}</p>
           </div>
         )
       case "L":
@@ -67,10 +68,10 @@ class MainPanel extends Component {
               <tr><th>Username</th><th>Score</th></tr>
               {this.leaderboardEntries}
             </table>
-            <form action="">
-              Username:
-              <input type="text" name="username" placeholder="player" id="inputtedUsername"/>
-              <input type="button" value="Submit" onClick={() => this.props.addToLeaderboard(document.getElementById("inputtedUsername").value)}/>
+            <form id="leaderboardForm" action="">
+              Add score to leaderboard
+              <input type="text" name="username" placeholder="username" id="inputtedUsername" className="nes-textarea"/>
+              <input type="button" value="Submit" className="nes-btn is-success" onClick={() => this.props.addToLeaderboard(document.getElementById("inputtedUsername").value)}/>
             </form>
           </div>
         )

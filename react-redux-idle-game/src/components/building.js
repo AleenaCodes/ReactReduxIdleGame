@@ -3,7 +3,7 @@ import React from 'react';
 function Building(props) {
   return (
     <div className="building">
-      <img src={require('./pictures/nyancat.png')} alt="meme icon" id="buildingIcon"/>
+      <img src={require('./pictures/' + props.id + '.png')} alt="meme icon" id="buildingIcon"/>
       <span id="buildingOwned">{props.number}</span>
       <div>
         <h4 id="buildingName">{props.name}</h4>

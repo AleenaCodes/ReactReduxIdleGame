@@ -6,35 +6,35 @@ const initialState = {
     },
     {
       name: "Grumpy Cat",
-      number: 0, cost: 50, power: 5
+      number: 0, cost: 50, power: 3
     },
     {
       name: "Dat Boi",
-      number: 0, cost: 100, power: 10
+      number: 0, cost: 100, power: 5
     },
     {
       name: "Philosoraptor",
-      number: 0, cost: 250, power: 15
+      number: 0, cost: 250, power: 10
+    },
+    {
+      name: "Me Gusta",
+      number: 0, cost: 500, power: 12
     },
     {
       name: "Nyan Cat",
-      number: 0, cost: 500, power: 20
-    },
-    {
-      name: "Double Rainbow",
-      number: 0, cost: 1000, power: 25
+      number: 0, cost: 1000, power: 15
     },
     {
       name: "Fidget Spinner",
-      number: 0, cost: 1500, power: 30
+      number: 0, cost: 1500, power: 20
     },
     {
       name: "Surprised Pikachu",
-      number: 0, cost: 2000, power: 35
+      number: 0, cost: 2000, power: 22
     },
     {
       name: "Big Chungus",
-      number: 0, cost: 5000, power: 50
+      number: 0, cost: 5000, power: 25
     }
   ],
   counter: 0,
