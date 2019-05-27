@@ -68,7 +68,11 @@ class MainPanel extends Component {
           <div className="mainPanel">
             <p>Leaderboard</p>
             {this.leaderboardEntries}
-            <button className="leaderboardAddButton" onClick={() => this.props.addToLeaderboard("player3")}>Add to leaderboard</button>
+            <form action="">
+              Username:
+              <input type="text" name="username" placeholder="player" id="inputtedUsername"/>
+              <input type="button" value="Submit" onClick={() => this.props.addToLeaderboard(document.getElementById("inputtedUsername").value)}/>
+            </form>
           </div>
         )
     }

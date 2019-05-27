@@ -2,7 +2,7 @@ export function buyBuilding(index) {
   return { type: 'BUY_BUILDING', index }
 }
 
-export function updateTotal(index) {
+export function updateTotal() {
   return { type: 'UPDATE_TOTAL'}
 }
 
@@ -19,5 +19,5 @@ export function resetCounter() {
 }
 
 export function addToLeaderboard(username) {
-  return { type: 'ADD_TO_LEADERBOARD'}
+  return { type: 'ADD_TO_LEADERBOARD', username}
 }
